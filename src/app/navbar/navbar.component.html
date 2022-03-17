@@ -1,0 +1,62 @@
+<nav class="d-flex justify-content-between align-items-center p-2 fixed-top">
+  <div class="left-nav d-flex justify-content-between align-items-center">
+    <h3 class="logo mb-0"><a routerLink="/home">Noxe</a></h3>
+    <ul
+      class="list-unstyled d-flex justify-content-between align-items-center ms-4 mb-0"
+    >
+      <li><a *ngIf="isLogin" class="mx-2" routerLink="/home">Home</a></li>
+      <li><a *ngIf="isLogin" class="mx-2" routerLink="/movies">movies</a></li>
+      <li><a *ngIf="isLogin" class="mx-2" routerLink="/tvShow">tv show</a></li>
+      <li><a *ngIf="isLogin" class="mx-2" routerLink="/people">people</a></li>
+      <li><a *ngIf="isLogin" class="mx-2" routerLink="/about">about</a></li>
+    </ul>
+  </div>
+  <div class="right-nav d-flex justify-content-between align-items-center">
+    <input type="text" />
+    <ul
+      class="social list-unstyled d-flex justify-content-between align-items-center mb-0"
+    >
+      <li>
+        <a routerLink="/"><i class="fa-brands mx-2 fa-facebook"></i></a>
+      </li>
+      <li>
+        <a routerLink="/"><i class="fa-brands mx-2 fa-spotify"></i></a>
+      </li>
+      <li>
+        <a routerLink="/"><i class="fa-brands mx-2 fa-instagram"></i></a>
+      </li>
+      <li>
+        <a routerLink="/"><i class="fa-brands mx-2 fa-youtube"></i></a>
+      </li>
+    </ul>
+    <ul
+      class="list-unstyled d-flex justify-content-between align-items-center mb-0"
+    >
+      <li class="mx-2"><a *ngIf="!isLogin" routerLink="/signIn">sign In</a></li>
+      <li class="mx-2"><a *ngIf="!isLogin" routerLink="/signUp">sign up</a></li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle p-0"
+          routerLink="/settings"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          settings
+        </a>
+        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" routerLink="settings/password">password</a>
+          </li>
+          <li><a class="dropdown-item" routerLink="settings/log">log</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="mx-2">
+        <a (click)="callLogout()" *ngIf="isLogin" routerLink="/">sign out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
